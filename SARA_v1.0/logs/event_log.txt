@@ -1,0 +1,189 @@
+[2026-03-03 13:57:44] [INFO]  [SARA_MONITOR] SARA Monitor started. PID=79307
+[2026-03-03 13:57:44] [INFO]  [SARA_MONITOR] Watching: /home/bunny/Downloads/SARA/logs
+[2026-03-03 13:57:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 13:58:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 13:59:16] [INFO] [SARA_ENTRY] User command received: "Play a lofi song"
+[2026-03-03 13:59:16] [INFO] [SARA_DISPATCHER] Matched action: play_song | Query: "lofi song"
+[2026-03-03 13:59:16] [INFO] [SARA_VALIDATOR] Validation PASSED for: play_song
+[2026-03-03 13:59:16] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'play_song' directly
+[2026-03-03 13:59:16] ─────────────────────────────────────────────────────
+[2026-03-03 13:59:16] [INFO] [play_song] Starting — query: "lofi song"
+[2026-03-03 13:59:16] [INFO] [play_song] Encoded query: lofi%20song
+[2026-03-03 13:59:16] [INFO] [play_song] YouTube URL: https://www.youtube.com/results?search_query=lofi%20song
+[2026-03-03 13:59:16] [INFO] [play_song] Opening browser...
+[2026-03-03 13:59:17] [INFO] [play_song] Browser launched (PID: 80002)
+[2026-03-03 13:59:17] [INFO] [play_song] Waiting 2s for browser to open...
+[2026-03-03 13:59:19] [INFO] [play_song] Attempting to focus browser window via xdotool...
+[2026-03-03 13:59:20] [INFO] [play_song] Focused window: YouTube (ID: 39845892)
+[2026-03-03 13:59:20] [INFO] [play_song] Action completed — playing: "lofi song"
+[2026-03-03 13:59:42] [INFO] [SARA_ENTRY] User command received: "Play a lofi song"
+[2026-03-03 13:59:42] [INFO] [SARA_DISPATCHER] Matched action: play_song | Query: "lofi song"
+[2026-03-03 13:59:42] [INFO] [SARA_VALIDATOR] Validation PASSED for: play_song
+[2026-03-03 13:59:42] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'play_song' directly
+[2026-03-03 13:59:42] ─────────────────────────────────────────────────────
+[2026-03-03 13:59:42] [INFO] [play_song] Starting — query: "lofi song"
+[2026-03-03 13:59:42] [INFO] [play_song] Encoded query: lofi%20song
+[2026-03-03 13:59:42] [INFO] [play_song] YouTube URL: https://www.youtube.com/results?search_query=lofi%20song
+[2026-03-03 13:59:42] [INFO] [play_song] Opening browser...
+[2026-03-03 13:59:42] [INFO] [play_song] Browser launched (PID: 80442)
+[2026-03-03 13:59:42] [INFO] [play_song] Waiting 2s for browser to open...
+[2026-03-03 13:59:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 13:59:44] [INFO] [play_song] Attempting to focus browser window via xdotool...
+[2026-03-03 13:59:45] [INFO] [play_song] Focused window: YouTube (ID: 39845892)
+[2026-03-03 13:59:45] [INFO] [play_song] Action completed — playing: "lofi song"
+[2026-03-03 14:00:05] [INFO] [SARA_ENTRY] User command received: "open"
+[2026-03-03 14:00:06] [ERROR] [SARA_DISPATCHER] No matching action for: "open"
+[2026-03-03 14:00:13] [INFO] [SARA_ENTRY] User command received: "open"
+[2026-03-03 14:00:13] [ERROR] [SARA_DISPATCHER] No matching action for: "open"
+[2026-03-03 14:00:14] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:00:06] [ERROR] [SARA_DISPATCHER] No matching action for: "open"
+[2026-03-03 14:00:14] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:00:13] [ERROR] [SARA_DISPATCHER] No matching action for: "open"
+[2026-03-03 14:00:37] [INFO] [SARA_ENTRY] User command received: "open"
+[2026-03-03 14:00:37] [ERROR] [SARA_DISPATCHER] No matching action for: "open"
+[2026-03-03 14:00:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:00:44] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:00:37] [ERROR] [SARA_DISPATCHER] No matching action for: "open"
+[2026-03-03 14:00:48] [INFO] [SARA_ENTRY] User command received: "open"
+[2026-03-03 14:00:48] [ERROR] [SARA_DISPATCHER] No matching action for: "open"
+[2026-03-03 14:00:54] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:00:48] [ERROR] [SARA_DISPATCHER] No matching action for: "open"
+[2026-03-03 14:01:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:02:28] [INFO] [SARA_ENTRY] User command received: "open system settings"
+[2026-03-03 14:02:28] [INFO] [SARA_DISPATCHER] Matched action: open_settings | Query: ""
+[2026-03-03 14:02:28] [INFO] [SARA_VALIDATOR] Validation PASSED for: open_settings
+[2026-03-03 14:02:28] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'open_settings' directly
+[2026-03-03 14:02:28] ─────────────────────────────────────────────────────
+[2026-03-03 14:02:28] [INFO] [open_settings] Starting
+[2026-03-03 14:02:28] [INFO] [open_settings] Detected DE: ubuntu:GNOME (XDG_CURRENT_DESKTOP=ubuntu:GNOME)
+[2026-03-03 14:02:28] [INFO] [open_settings] Launching GNOME Settings: gnome-control-center
+[2026-03-03 14:02:28] [INFO] [open_settings] GNOME Settings launched (PID: 82751)
+[2026-03-03 14:02:31] [INFO] [open_settings] Window focused: Settings
+[2026-03-03 14:02:31] [INFO] [open_settings] Action completed.
+[2026-03-03 14:02:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:03:06] [INFO] [SARA_ENTRY] User command received: "open system settings"
+[2026-03-03 14:03:06] [INFO] [SARA_DISPATCHER] Matched action: open_settings | Query: ""
+[2026-03-03 14:03:06] [INFO] [SARA_VALIDATOR] Validation PASSED for: open_settings
+[2026-03-03 14:03:06] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'open_settings' directly
+[2026-03-03 14:03:06] ─────────────────────────────────────────────────────
+[2026-03-03 14:03:06] [INFO] [open_settings] Starting
+[2026-03-03 14:03:06] [INFO] [open_settings] Detected DE: ubuntu:GNOME (XDG_CURRENT_DESKTOP=ubuntu:GNOME)
+[2026-03-03 14:03:06] [INFO] [open_settings] Launching GNOME Settings: gnome-control-center
+[2026-03-03 14:03:06] [INFO] [open_settings] GNOME Settings launched (PID: 83135)
+[2026-03-03 14:03:09] [INFO] [open_settings] Window focused: Settings
+[2026-03-03 14:03:09] [INFO] [open_settings] Action completed.
+[2026-03-03 14:03:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:03:52] [INFO] [SARA_ENTRY] User command received: "-lists"
+[2026-03-03 14:03:52] [ERROR] [SARA_DISPATCHER] No matching action for: "-lists"
+[2026-03-03 14:03:54] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:03:52] [ERROR] [SARA_DISPATCHER] No matching action for: "-lists"
+[2026-03-03 14:04:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:04:54] [INFO] [SARA_ENTRY] User command received: "permanently empty the trash"
+[2026-03-03 14:04:54] [INFO] [SARA_DISPATCHER] Matched action: clean_trash | Query: ""
+[2026-03-03 14:04:54] [ERROR] [SARA_VALIDATOR] Validation FAILED for clean_trash: [VALIDATOR] FAILED: Unauthorized sudo usage found: 'sudo. It only touches the user's own Trash.'
+[2026-03-03 14:04:54] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:04:54] [ERROR] [SARA_VALIDATOR] Validation FAILED for clean_trash: [VALIDATOR] FAILED: Unauthorized sudo usage found: 'sudo. It only touches the user's own Trash.'
+[2026-03-03 14:05:44] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:06:06] [INFO] [SARA_ENTRY] User command received: "open spotify"
+[2026-03-03 14:06:06] [INFO] [SARA_DISPATCHER] Matched action: open_spotify | Query: ""
+[2026-03-03 14:06:06] [INFO] [SARA_VALIDATOR] Validation PASSED for: open_spotify
+[2026-03-03 14:06:06] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'open_spotify' directly
+[2026-03-03 14:06:06] ─────────────────────────────────────────────────────
+[2026-03-03 14:06:06] [INFO] [open_spotify] Starting — looking for Spotify
+[2026-03-03 14:06:07] [INFO] [open_spotify] Spotify not found locally — opening web player
+[2026-03-03 14:06:07] [INFO] [open_spotify] Browser launched (PID: 84455) → https://open.spotify.com
+[2026-03-03 14:06:09] [INFO] [open_spotify] Focused: Spotify
+[2026-03-03 14:06:09] [INFO] [open_spotify] Action completed.
+[2026-03-03 14:06:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:07:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:08:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:09:32] [INFO] [SARA_ENTRY] User command received: "search googel for best place to visit in kolkata"
+[2026-03-03 14:09:32] [ERROR] [SARA_DISPATCHER] No matching action for: "search googel for best place to visit in kolkata"
+[2026-03-03 14:09:35] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:09:32] [ERROR] [SARA_DISPATCHER] No matching action for: "search googel for best place to visit in kolkata"
+[2026-03-03 14:09:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:10:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:11:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:12:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:13:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:14:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:15:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:16:45] [INFO] [SARA_ENTRY] User command received: "launch spotify"
+[2026-03-03 14:16:45] [INFO] [SARA_DISPATCHER] Matched action: open_spotify | Query: ""
+[2026-03-03 14:16:45] [INFO] [SARA_VALIDATOR] Validation PASSED for: open_spotify
+[2026-03-03 14:16:45] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'open_spotify' directly
+[2026-03-03 14:16:45] ─────────────────────────────────────────────────────
+[2026-03-03 14:16:45] [INFO] [open_spotify] Starting — looking for Spotify
+[2026-03-03 14:16:45] [INFO] [open_spotify] Spotify not found locally — opening web player
+[2026-03-03 14:16:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:16:45] [INFO] [open_spotify] Browser launched (PID: 88599) → https://open.spotify.com
+[2026-03-03 14:16:47] [INFO] [open_spotify] Focused: Spotify
+[2026-03-03 14:16:47] [INFO] [open_spotify] Action completed.
+[2026-03-03 14:17:45] [INFO] [SARA_ENTRY] User command received: "search google for python tutorials"
+[2026-03-03 14:17:45] [INFO] [SARA_DISPATCHER] Matched action: search_google | Query: "python tutorials"
+[2026-03-03 14:17:45] [INFO] [SARA_VALIDATOR] Validation PASSED for: search_google
+[2026-03-03 14:17:45] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'search_google' directly
+[2026-03-03 14:17:45] ─────────────────────────────────────────────────────
+[2026-03-03 14:17:45] [INFO] [search_google] Starting — query: "python tutorials"
+[2026-03-03 14:17:45] [INFO] [search_google] Search URL: https://www.google.com/search?q=python%20tutorials
+[2026-03-03 14:17:45] [INFO] [search_google] Browser launched (PID: 89149)
+[2026-03-03 14:17:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:17:47] [INFO] [search_google] Window focused: Google
+[2026-03-03 14:17:47] [INFO] [search_google] Action completed — Google search: "python tutorials"
+[2026-03-03 14:18:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:18:53] [INFO] [SARA_ENTRY] User command received: "search google for when is the semifinal match india vs england dated"
+[2026-03-03 14:18:53] [INFO] [SARA_DISPATCHER] Matched action: search_google | Query: "when is the semifinal match india vs england dated"
+[2026-03-03 14:18:53] [INFO] [SARA_VALIDATOR] Validation PASSED for: search_google
+[2026-03-03 14:18:53] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'search_google' directly
+[2026-03-03 14:18:53] ─────────────────────────────────────────────────────
+[2026-03-03 14:18:53] [INFO] [search_google] Starting — query: "when is the semifinal match india vs england dated"
+[2026-03-03 14:18:53] [INFO] [search_google] Search URL: https://www.google.com/search?q=when%20is%20the%20semifinal%20match%20india%20vs%20england%20dated
+[2026-03-03 14:18:53] [INFO] [search_google] Browser launched (PID: 89760)
+[2026-03-03 14:18:55] [INFO] [search_google] Window focused: Google
+[2026-03-03 14:18:55] [INFO] [search_google] Action completed — Google search: "when is the semifinal match india vs england dated"
+[2026-03-03 14:19:45] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:19:50] [INFO] [SARA_ENTRY] User command received: "What is daemon"
+[2026-03-03 14:19:50] [ERROR] [SARA_DISPATCHER] No matching action for: "What is daemon"
+[2026-03-03 14:19:55] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:19:50] [ERROR] [SARA_DISPATCHER] No matching action for: "What is daemon"
+[2026-03-03 14:19:56] [INFO] [SARA_ENTRY] User command received: "what is daemon"
+[2026-03-03 14:19:56] [ERROR] [SARA_DISPATCHER] No matching action for: "what is daemon"
+[2026-03-03 14:20:05] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:19:56] [ERROR] [SARA_DISPATCHER] No matching action for: "what is daemon"
+[2026-03-03 14:20:39] [INFO] [SARA_ENTRY] User command received: "google about iran vs isreal war"
+[2026-03-03 14:20:39] [INFO] [SARA_DISPATCHER] Matched action: search_google | Query: "bout iran vs isreal war"
+[2026-03-03 14:20:39] [INFO] [SARA_VALIDATOR] Validation PASSED for: search_google
+[2026-03-03 14:20:39] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'search_google' directly
+[2026-03-03 14:20:39] ─────────────────────────────────────────────────────
+[2026-03-03 14:20:39] [INFO] [search_google] Starting — query: "bout iran vs isreal war"
+[2026-03-03 14:20:39] [INFO] [search_google] Search URL: https://www.google.com/search?q=bout%20iran%20vs%20isreal%20war
+[2026-03-03 14:20:39] [INFO] [search_google] Browser launched (PID: 90623)
+[2026-03-03 14:20:41] [INFO] [search_google] Window focused: Google
+[2026-03-03 14:20:41] [INFO] [search_google] Action completed — Google search: "bout iran vs isreal war"
+[2026-03-03 14:20:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:21:36] [INFO] [SARA_ENTRY] User command received: "Find me best places to vist in summer"
+[2026-03-03 14:21:36] [ERROR] [SARA_DISPATCHER] No matching action for: "Find me best places to vist in summer"
+[2026-03-03 14:21:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:21:46] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:21:36] [ERROR] [SARA_DISPATCHER] No matching action for: "Find me best places to vist in summer"
+[2026-03-03 14:21:53] [INFO] [SARA_ENTRY] User command received: "Find me recipes for pasta"
+[2026-03-03 14:21:54] [ERROR] [SARA_DISPATCHER] No matching action for: "Find me recipes for pasta"
+[2026-03-03 14:21:56] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:21:54] [ERROR] [SARA_DISPATCHER] No matching action for: "Find me recipes for pasta"
+[2026-03-03 14:22:03] [INFO] [SARA_ENTRY] User command received: "find me recipes for pasta"
+[2026-03-03 14:22:03] [ERROR] [SARA_DISPATCHER] No matching action for: "find me recipes for pasta"
+[2026-03-03 14:22:06] [INFO]  [SARA_MONITOR] New error detected: [2026-03-03 14:22:03] [ERROR] [SARA_DISPATCHER] No matching action for: "find me recipes for pasta"
+[2026-03-03 14:22:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:23:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:24:43] [INFO] [SARA_ENTRY] User command received: "play english songs for me"
+[2026-03-03 14:24:43] [INFO] [SARA_DISPATCHER] Matched action: play_song | Query: "english songs"
+[2026-03-03 14:24:43] [INFO] [SARA_VALIDATOR] Validation PASSED for: play_song
+[2026-03-03 14:24:43] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'play_song' directly
+[2026-03-03 14:24:43] ─────────────────────────────────────────────────────
+[2026-03-03 14:24:43] [INFO] [play_song] Starting — query: "english songs"
+[2026-03-03 14:24:43] [INFO] [play_song] Encoded query: english%20songs
+[2026-03-03 14:24:43] [INFO] [play_song] YouTube URL: https://www.youtube.com/results?search_query=english%20songs
+[2026-03-03 14:24:43] [INFO] [play_song] Opening browser...
+[2026-03-03 14:24:43] [INFO] [play_song] Browser launched (PID: 92328)
+[2026-03-03 14:24:43] [INFO] [play_song] Waiting 2s for browser to open...
+[2026-03-03 14:24:45] [INFO] [play_song] Attempting to focus browser window via xdotool...
+[2026-03-03 14:24:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:24:46] [INFO] [play_song] Focused window: YouTube (ID: 39845912)
+[2026-03-03 14:24:46] [INFO] [play_song] Action completed — playing: "english songs"
+[2026-03-03 14:25:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:26:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:27:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:28:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:29:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:30:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:31:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:32:46] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.

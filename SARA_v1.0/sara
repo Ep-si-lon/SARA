@@ -1,0 +1,231 @@
+#!/usr/bin/env bash
+# =============================================================================
+#  SARA - System Automation & Response Agent  |  Version 1.0
+#  Entry Point: CLI Wrapper
+#
+#  Usage:
+#    sara -"Play an English song for me"
+#    sara -"Open YouTube"
+#    sara -"Search Google for Linux tips"
+#    sara -"Clean trash"
+#    sara -"Open Spotify"
+#    sara -"Open Settings"
+#    sara --help
+#    sara --list
+# =============================================================================
+
+# ── Resolve SARA root regardless of where the binary is symlinked ────────────
+SARA_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export SARA_ROOT
+
+# ── Source config ─────────────────────────────────────────────────────────────
+CONFIG_FILE="$SARA_ROOT/config/sara.conf"
+if [[ -f "$CONFIG_FILE" ]]; then
+    # shellcheck source=/dev/null
+    source "$CONFIG_FILE"
+else
+    echo "[SARA] ERROR: Config file not found at $CONFIG_FILE"
+    exit 1
+fi
+
+# ── Source utilities ──────────────────────────────────────────────────────────
+source "$SARA_ROOT/utils/logger.sh"
+source "$SARA_ROOT/utils/notify.sh"
+
+# ── Ensure log directory exists ───────────────────────────────────────────────
+mkdir -p "$SARA_LOG_DIR"
+
+# ── Banner ────────────────────────────────────────────────────────────────────
+print_banner() {
+    echo ""
+    echo "  ███████╗ █████╗ ██████╗  █████╗ "
+    echo "  ██╔════╝██╔══██╗██╔══██╗██╔══██╗"
+    echo "  ███████╗███████║██████╔╝███████║"
+    echo "  ╚════██║██╔══██║██╔══██╗██╔══██║"
+    echo "  ███████║██║  ██║██║  ██║██║  ██║"
+    echo "  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝"
+    echo "  System Automation & Response Agent  v1.0"
+    echo ""
+}
+
+# ── Help ──────────────────────────────────────────────────────────────────────
+print_help() {
+    print_banner
+    echo "  USAGE:"
+    echo "    sara -\"<your command in plain English>\""
+    echo ""
+    echo "  EXAMPLES:"
+    echo "    sara -\"Play a lofi song\""
+    echo "    sara -\"Open YouTube\""
+    echo "    sara -\"Search Google for Python tutorials\""
+    echo "    sara -\"Open Spotify\""
+    echo "    sara -\"Open Settings\""
+    echo "    sara -\"Clean the trash\""
+    echo ""
+    echo "  OPTIONS:"
+    echo "    --help     Show this help message"
+    echo "    --list     List all available actions"
+    echo "    --logs     Tail the live event log"
+    echo "    --errors   Show recent errors"
+    echo "    --status   Show SARA monitor status"
+    echo ""
+}
+
+# ── List actions ──────────────────────────────────────────────────────────────
+list_actions() {
+    print_banner
+    echo "  AVAILABLE HIGH-LEVEL ACTIONS:"
+    echo "  ─────────────────────────────────────────────"
+    echo "  [1]  play_song       → Play a song on YouTube"
+    echo "  [2]  open_youtube    → Open YouTube in browser"
+    echo "  [3]  search_google   → Search Google for a query"
+    echo "  [4]  open_spotify    → Open Spotify (local or web)"
+    echo "  [5]  open_settings   → Open system settings"
+    echo "  [6]  clean_trash     → Permanently empty the Trash"
+    echo "  ─────────────────────────────────────────────"
+    echo ""
+    echo "  AVAILABLE LOW-LEVEL ACTIONS (used internally):"
+    echo "  ─────────────────────────────────────────────"
+    echo "  mouse_click.py  mouse_move.py  type_text.py"
+    echo "  key_press.py    scroll.py      screenshot.py"
+    echo "  ─────────────────────────────────────────────"
+    echo ""
+}
+
+# ── Argument Handling ─────────────────────────────────────────────────────────
+if [[ $# -eq 0 ]]; then
+    print_help
+    exit 0
+fi
+
+case "$1" in
+    --help|-h)
+        print_help
+        exit 0
+        ;;
+    --list|-l)
+        list_actions
+        exit 0
+        ;;
+    --logs)
+        echo "[SARA] Tailing event log (Ctrl+C to stop)..."
+        tail -f "$SARA_LOG_DIR/event_log.txt"
+        exit 0
+        ;;
+    --errors)
+        echo "[SARA] Recent errors:"
+        echo "─────────────────────────────────────────────"
+        tail -n 30 "$SARA_LOG_DIR/error_log.txt" 2>/dev/null || echo "No errors logged yet."
+        exit 0
+        ;;
+    --status)
+        PID_FILE="$SARA_ROOT/core/monitor.pid"
+        if [[ -f "$PID_FILE" ]] && kill -0 "$(cat "$PID_FILE")" 2>/dev/null; then
+            echo "[SARA] Monitor is RUNNING (PID: $(cat "$PID_FILE"))"
+        else
+            echo "[SARA] Monitor is NOT running."
+            echo "       Start it with: python3 $SARA_ROOT/core/monitor.py &"
+        fi
+        exit 0
+        ;;
+esac
+
+# ── Parse the command string ──────────────────────────────────────────────────
+# Accept:  sara -"..."   or   sara -'...'   or   sara "..."
+RAW_INPUT="$1"
+# Strip leading dash/quote characters
+USER_COMMAND="${RAW_INPUT#-}"       # remove leading -
+USER_COMMAND="${USER_COMMAND#\"}"   # remove leading "
+USER_COMMAND="${USER_COMMAND%\"}"   # remove trailing "
+USER_COMMAND="${USER_COMMAND#\'}"   # remove leading '
+USER_COMMAND="${USER_COMMAND%\'}"   # remove trailing '
+
+if [[ -z "$USER_COMMAND" ]]; then
+    sara_log_error "SARA_ENTRY" "Empty command received."
+    echo "[SARA] ERROR: No command provided. Use sara --help for usage."
+    exit 1
+fi
+
+# ── Log the incoming request ──────────────────────────────────────────────────
+sara_log_event "SARA_ENTRY" "User command received: \"$USER_COMMAND\""
+sara_notify "SARA" "Processing: \"$USER_COMMAND\""
+
+echo ""
+echo "[SARA] Received: \"$USER_COMMAND\""
+echo "[SARA] Dispatching..."
+echo ""
+
+# ── Step 1: Dispatch → get action + extracted query ──────────────────────────
+DISPATCH_RESULT=$(python3 "$SARA_ROOT/core/dispatcher.py" "$USER_COMMAND" 2>&1)
+DISPATCH_EXIT=$?
+
+if [[ $DISPATCH_EXIT -ne 0 ]]; then
+    sara_log_error "SARA_DISPATCHER" "Dispatcher failed: $DISPATCH_RESULT"
+    echo "[SARA] ERROR: Could not dispatch command. See error log."
+    sara_notify "SARA Error" "Could not understand: $USER_COMMAND"
+    exit 1
+fi
+
+# dispatcher.py outputs: ACTION_NAME|EXTRACTED_QUERY
+ACTION_NAME=$(echo "$DISPATCH_RESULT" | cut -d'|' -f1)
+EXTRACTED_QUERY=$(echo "$DISPATCH_RESULT" | cut -d'|' -f2)
+
+if [[ "$ACTION_NAME" == "UNKNOWN" ]]; then
+    sara_log_error "SARA_DISPATCHER" "No matching action for: \"$USER_COMMAND\""
+    echo "[SARA] Sorry, I don't know how to handle: \"$USER_COMMAND\""
+    echo "[SARA] Use 'sara --list' to see available actions."
+    sara_notify "SARA" "Unknown command. Try 'sara --list'"
+    exit 1
+fi
+
+sara_log_event "SARA_DISPATCHER" "Matched action: $ACTION_NAME | Query: \"$EXTRACTED_QUERY\""
+echo "[SARA] Action selected : $ACTION_NAME"
+echo "[SARA] Extracted query : \"$EXTRACTED_QUERY\""
+echo ""
+
+# ── Step 2: Validate the action script ───────────────────────────────────────
+ACTION_SCRIPT="$SARA_ROOT/actions/high_level/${ACTION_NAME}.sh"
+
+if [[ ! -f "$ACTION_SCRIPT" ]]; then
+    sara_log_error "SARA_VALIDATOR" "Action script not found: $ACTION_SCRIPT"
+    echo "[SARA] ERROR: Action script missing: $ACTION_SCRIPT"
+    exit 1
+fi
+
+echo "[SARA] Running security validator..."
+VALIDATION_RESULT=$(python3 "$SARA_ROOT/core/validator.py" "$ACTION_SCRIPT" 2>&1)
+VALIDATION_EXIT=$?
+
+if [[ $VALIDATION_EXIT -ne 0 ]]; then
+    sara_log_error "SARA_VALIDATOR" "Validation FAILED for $ACTION_NAME: $VALIDATION_RESULT"
+    echo "[SARA] ✗ SECURITY CHECK FAILED — Action aborted."
+    echo "[SARA] Reason: $VALIDATION_RESULT"
+    sara_notify "SARA Security" "Action blocked: $ACTION_NAME"
+    exit 1
+fi
+
+sara_log_event "SARA_VALIDATOR" "Validation PASSED for: $ACTION_NAME"
+echo "[SARA] ✓ Security check passed."
+echo ""
+
+# ── Step 3: Schedule via 'at' for immediate non-overlapping execution ─────────
+echo "[SARA] Scheduling action with 'at'..."
+AT_JOB_CMD="bash $ACTION_SCRIPT \"$EXTRACTED_QUERY\" >> $SARA_LOG_DIR/event_log.txt 2>> $SARA_LOG_DIR/error_log.txt"
+
+echo "$AT_JOB_CMD" | at now 2>/dev/null
+AT_EXIT=$?
+
+if [[ $AT_EXIT -eq 0 ]]; then
+    sara_log_event "SARA_SCHEDULER" "Action '$ACTION_NAME' queued via 'at'"
+    echo "[SARA] ✓ Action '$ACTION_NAME' queued for execution."
+    sara_notify "SARA" "Running: $ACTION_NAME"
+else
+    # Fallback: run directly if 'at' is not available
+    sara_log_event "SARA_SCHEDULER" "'at' unavailable, running '$ACTION_NAME' directly"
+    echo "[SARA] 'at' not available — running directly..."
+    bash "$ACTION_SCRIPT" "$EXTRACTED_QUERY"
+fi
+
+echo ""
+echo "[SARA] Done. Check logs with: sara --logs"
+echo ""

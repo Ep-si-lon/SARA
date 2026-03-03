@@ -1,0 +1,30 @@
+[2026-03-03 14:35:58] [INFO]  [SARA_MONITOR] SARA Monitor started. PID=93443
+[2026-03-03 14:35:58] [INFO]  [SARA_MONITOR] Watching: /home/bunny/Desktop/SARA/SARA_v1.1/logs
+[2026-03-03 14:35:58] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:36:32] [INFO]  [SARA_MONITOR] Received signal 15 — shutting down monitor.
+[2026-03-03 14:36:33] [INFO] [SARA_CONTROL] SARA stopped by user
+[2026-03-03 14:40:38] [INFO]  [SARA_MONITOR] SARA Monitor started. PID=93702
+[2026-03-03 14:40:38] [INFO]  [SARA_MONITOR] Watching: /home/bunny/Desktop/SARA/SARA_v1.1/logs
+[2026-03-03 14:40:38] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:40:39] [INFO] [SARA_CONTROL] SARA activated — monitor started
+[2026-03-03 14:41:33] [INFO]  [SARA_MONITOR] Received signal 15 — shutting down monitor.
+[2026-03-03 14:41:34] [INFO]  [SARA_MONITOR] Monitor stopped.
+[2026-03-03 14:41:34] [INFO] [SARA_CONTROL] SARA stopped by user
+[2026-03-03 14:42:37] [INFO]  [SARA_MONITOR] SARA Monitor started. PID=93880
+[2026-03-03 14:42:37] [INFO]  [SARA_MONITOR] Watching: /home/bunny/Desktop/SARA/SARA_v1.1/logs
+[2026-03-03 14:42:37] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:42:38] [INFO] [SARA_CONTROL] SARA activated — monitor started
+[2026-03-03 14:43:37] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:44:37] [INFO]  [SARA_MONITOR] Heartbeat — monitor alive.
+[2026-03-03 14:44:56] [INFO] [SARA_ENTRY] User command received: "open spotify"
+[2026-03-03 14:44:56] [INFO] [SARA_DISPATCHER] Matched action: open_spotify | Query: ""
+[2026-03-03 14:44:56] [INFO] [SARA_VALIDATOR] Validation PASSED for: open_spotify
+[2026-03-03 14:44:56] [INFO] [SARA_SCHEDULER] 'at' unavailable, running 'open_spotify' directly
+[2026-03-03 14:44:56] ─────────────────────────────────────────────────────
+[2026-03-03 14:44:56] [INFO] [open_spotify] Starting — looking for Spotify
+[2026-03-03 14:44:56] [INFO] [open_spotify] Spotify not found locally — opening web player
+[2026-03-03 14:44:56] [INFO] [open_spotify] Browser launched (PID: 94096) → https://open.spotify.com
+[2026-03-03 14:44:58] [INFO] [open_spotify] Focused: Spotify
+[2026-03-03 14:44:58] [INFO] [open_spotify] Action completed.
+[2026-03-03 14:45:35] [INFO]  [SARA_MONITOR] Received signal 15 — shutting down monitor.
+[2026-03-03 14:45:36] [INFO] [SARA_CONTROL] SARA stopped by user
