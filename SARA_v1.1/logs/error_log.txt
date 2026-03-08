@@ -1,0 +1,5 @@
+Created TensorFlow Lite XNNPACK delegate for CPU.
+[132005:132005:0308/154351.270632:ERROR:media/gpu/vaapi/vaapi_wrapper.cc:1648] Installed VAAPI version is too old. min supported version: 1.17 installed version: 1.14
+[131962:131988:0308/154353.488277:ERROR:google_apis/gcm/engine/registration_request.cc:290] Registration response error message: DEPRECATED_ENDPOINT
+[131962:131988:0308/154415.903507:ERROR:google_apis/gcm/engine/registration_request.cc:290] Registration response error message: DEPRECATED_ENDPOINT
+[132005:132005:0308/154442.726017:ERROR:ui/gfx/x/connection.cc:67] X connection error received.

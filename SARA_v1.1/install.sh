@@ -129,7 +129,7 @@ fi
 # ── Done ──────────────────────────────────────────────────────────────────────
 echo ""
 echo "  ════════════════════════════════════════"
-echo "   SARA v1.0 installed successfully!"
+echo "   SARA v1.1 installed successfully!"
 echo "  ════════════════════════════════════════"
 echo ""
 echo "  Try it:"
